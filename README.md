@@ -22,3 +22,74 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+
+| Column     | Type       | Options                        |
+| ------     | ---------- | ------------------------------ |
+| nickname   | string     | null: false                    |
+| mail       | string     | null: false                    |
+| password   | string     | null: false                    |
+
+### Association
+
+- has_many :recipes
+- has_many :comments
+
+## recipesテーブル
+
+| Column         | Type       | Options                        |
+| -------------  | ---------- | ------------------------------ |
+| name           | string     | null: false                    |
+| category_id    | integer    | null: false                    |
+| explaination   | string     | null: false                    |
+| detail1        | string     |                                |
+| detail2        | string     |                                |
+| detail3        | string     |                                |
+| detail4        | string     |                                |
+| detail5        | string     |                                |
+
+### Association
+
+- belong_to :user
+- has_one :ingredient
+- has_many :comments
+
+## ingredientsテーブル
+
+| Column         | Type        | Options                        |
+| -------------  | ----------  | ------------------------------ |
+| recipe_id      | integer     | null: false                    |
+| name1          | string      |                                |
+| quantity1      | integer     |                                |
+| calorie1       | integer     |                                |
+| name2          | string      |                                |
+| quantity2      | integer     |                                |
+| calorie2       | integer     |                                |
+| name3          | string      |                                |
+| quantity3      | integer     |                                |
+| calorie3       | integer     |                                |
+| name4          | string      |                                |
+| quantity4      | integer     |                                |
+| calorie4       | integer     |                                |
+| name5          | string      |                                |
+| quantity5      | integer     |                                |
+| calorie5       | integer     |                                |
+| all_calorie    | integer     |                                |
+
+### Association
+
+belongs_to recipe
+
+## commentsテーブル
+
+| Column     | Type       | Options                        |
+| ------     | ---------- | ------------------------------ |
+| comment    | string     | null: false                    |
+| user_id    | integer    | null: false                    |
+| recipe_id  | integer    | null: false                    |
+
+### Association
+
+belongs_to user
+belongs_to recipe
