@@ -13,11 +13,4 @@ class User < ApplicationRecord
     validates :password , length: { minimum: 6 } , format:{ with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze }
   end
 
-
-End
-
-
-
-
-
 end
