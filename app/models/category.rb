@@ -6,14 +6,9 @@ class Category < ActiveHash::Base
     { id: 4, name: 'イタリアン' },
     { id: 5, name: 'エスニック' },
     { id: 6, name: 'その他' },
+  ]
 
     include ActiveHash: :Associations
     has_many :recipes
   
-
-
-
-
-
-  ]
 end
