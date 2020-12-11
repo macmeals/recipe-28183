@@ -42,12 +42,13 @@ Things you may want to cover:
 | -------------  | ---------- | ------------------------------ |
 | name           | string     | null: false                    |
 | category_id    | integer    | null: false                    |
-| explaination   | text    | null: false                    |
-| detail1        | text     |                                |
-| detail2        | text     |                                |
-| detail3        | text     |                                |
-| detail4        | text     |                                |
-| detail5        | text     |                                |
+| explaination   | text       | null: false                    |
+| detail1        | text       |                                |
+| detail2        | text       |                                |
+| detail3        | text       |                                |
+| detail4        | text       |                                |
+| detail5        | text       |                                |
+| user_id        | integer    | null: false                    |
 
 ### Association
 

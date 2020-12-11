@@ -5,9 +5,9 @@
   </header>
   <div class="items-sell-main"> 
     <h2 class="items-sell-title">あなたのレシピを入力して下さい。</h2>
-    <%= form_with(model:@recipe, local: true) do |f| %>
-  
-    <%= render 'shared/error_messages', model: f.object %>
+    <%= form_with(url: recipes_path, local: true) do |f| %>
+
+    <%# <%= render 'shared/error_messages', model: f.object %> 
 
     <%# 出品画像 %>
     <div class="img-upload">
@@ -19,7 +19,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image1, id:"item-image" %>
       </div> 
     </div>
     <%# /出品画像 %>
@@ -61,38 +61,39 @@
     </div>
     <div class='input-name-wrap'>
     材料1 
-      <%= f.text_area :hoge, class:"input-name", id:"first-name", placeholder:"例) 鶏肉" %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name", placeholder:"例) 100g" %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name", placeholder:"例) 150" %>kcal
+      <%= f.text_area :name1, class:"input-name", id:"first-name", placeholder:"例) 鶏肉" %>
+      <%= f.text_area :quantity1, class:"input-name", id:"last-name", placeholder:"例) 100g" %>
+      <%= f.text_area :calorie1, class:"input-name", id:"last-name", placeholder:"例) 150" %>kcal
     </div>
     <div class='input-name-wrap'>
     材料2
-      <%= f.text_area :hoge, class:"input-name", id:"first-name"  %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name"  %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name" %>kcal
+      <%= f.text_area :name2, class:"input-name", id:"first-name"  %>
+      <%= f.text_area :quantity2, class:"input-name", id:"last-name"  %>
+      <%= f.text_area :calorie2, class:"input-name", id:"last-name" %>kcal
     </div>
     <div class='input-name-wrap'>
     材料3 
-      <%= f.text_area :hoge, class:"input-name", id:"first-name" %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name" %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name" %>kcal
+      <%= f.text_area :name3, class:"input-name", id:"first-name" %>
+      <%= f.text_area :quantity3, class:"input-name", id:"last-name" %>
+      <%= f.text_area :calorie3, class:"input-name", id:"last-name" %>kcal
     </div>
     <div class='input-name-wrap'>
     材料4 
-      <%= f.text_area :hoge, class:"input-name", id:"first-name" %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name" %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name" %>kcal
+      <%= f.text_area :name4, class:"input-name", id:"first-name" %>
+      <%= f.text_area :quantity4, class:"input-name", id:"last-name" %>
+      <%= f.text_area :calorie4, class:"input-name", id:"last-name" %>kcal
     </div>
     <div class='input-name-wrap'>
     材料4 
-      <%= f.text_area :hoge, class:"input-name", id:"first-name" %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name" %>
-      <%= f.text_area :hoge, class:"input-name", id:"last-name" %>kcal
+      <%= f.text_area :name5, class:"input-name", id:"first-name" %>
+      <%= f.text_area :quantity5, class:"input-name", id:"last-name" %>
+      <%= f.text_area :calorie5, class:"input-name", id:"last-name" %>kcal
     </div>
 
     <div>総カロリー
-      <%= f.text_area :hoge, class:"input-name", id:"last-name" %>
+      <span id: "all_calories" ></span>kcal
     </div>
+
   <%# </div> %>
 
     <%# /材料 %>
@@ -110,14 +111,14 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image2, id:"item-image" %>
       </div> 
     
       <div class="items-explain">
         <div class="weight-bold-text">
           <span>詳細</span>
         </div>
-        <%= f.text_area :explaination, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :detail1, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
 
       <div class="click-upload">
@@ -127,14 +128,14 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image3, id:"item-image" %>
       </div> 
     
       <div class="items-explain">
         <div class="weight-bold-text">
           <span class="indispensable">詳細</span>
         </div>
-        <%= f.text_area :explaination, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :detail2, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
 
       <div class="click-upload">
@@ -144,14 +145,14 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image4, id:"item-image" %>
       </div> 
     
       <div class="items-explain">
         <div class="weight-bold-text">
           <span class="indispensable">詳細</span>
         </div>
-        <%= f.text_area :explaination, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :detail3, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
 
       <div class="click-upload">
@@ -161,14 +162,14 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image5, id:"item-image" %>
       </div> 
     
       <div class="items-explain">
         <div class="weight-bold-text">
           <span class="indispensable">詳細</span>
         </div>
-        <%= f.text_area :explaination, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :detail4, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
 
       <div class="click-upload">
@@ -178,14 +179,14 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image6, id:"item-image" %>
       </div> 
     
       <div class="items-explain">
         <div class="weight-bold-text">
           <span class="indispensable">詳細</span>
         </div>
-        <%= f.text_area :explaination, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :detail5, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
 
 <%# /手順 %>
@@ -242,5 +243,3 @@
       </div>
     </div>  %>
     <%# カロリー計算の記述 %>
-
-    

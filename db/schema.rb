@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_080929) do
     t.text "detail3"
     t.text "detail4"
     t.text "detail5"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
