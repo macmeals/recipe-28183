@@ -19,7 +19,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image1, id:"item-image" %>
+        <%= f.file_field :images, multiple: true , id:"item-image" %>
       </div> 
     </div>
     <%# /出品画像 %>
@@ -61,33 +61,33 @@
     </div>
     <div class='input-name-wrap'>
     材料1 
-      <%= f.text_area :name1, class:"input-name", id:"first-name", placeholder:"例) 鶏肉" %>
-      <%= f.text_area :quantity1, class:"input-name", id:"last-name", placeholder:"例) 100g" %>
-      <%= f.text_area :calorie1, class:"input-name", id:"last-name", placeholder:"例) 150" %>kcal
+      <%= f.text_area :ing_name1, class:"input-name", id:"first-name", placeholder:"例) 鶏肉" %>
+      <%= f.text_area :ing_quantity1, class:"input-name", id:"last-name", placeholder:"例) 100g" %>
+      <%= f.text_area :ing_calorie1, class:"input-name", id:"last-name", placeholder:"例) 150" %>kcal
     </div>
     <div class='input-name-wrap'>
     材料2
-      <%= f.text_area :name2, class:"input-name", id:"first-name"  %>
-      <%= f.text_area :quantity2, class:"input-name", id:"last-name"  %>
-      <%= f.text_area :calorie2, class:"input-name", id:"last-name" %>kcal
+      <%= f.text_area :ing_name2, class:"input-name", id:"first-name"  %>
+      <%= f.text_area :ing_quantity2, class:"input-name", id:"last-name"  %>
+      <%= f.text_area :ing_calorie2, class:"input-name", id:"last-name" %>kcal
     </div>
     <div class='input-name-wrap'>
     材料3 
-      <%= f.text_area :name3, class:"input-name", id:"first-name" %>
-      <%= f.text_area :quantity3, class:"input-name", id:"last-name" %>
-      <%= f.text_area :calorie3, class:"input-name", id:"last-name" %>kcal
+      <%= f.text_area :ing_name3, class:"input-name", id:"first-name" %>
+      <%= f.text_area :ing_quantity3, class:"input-name", id:"last-name" %>
+      <%= f.text_area :ing_calorie3, class:"input-name", id:"last-name" %>kcal
     </div>
     <div class='input-name-wrap'>
     材料4 
-      <%= f.text_area :name4, class:"input-name", id:"first-name" %>
-      <%= f.text_area :quantity4, class:"input-name", id:"last-name" %>
-      <%= f.text_area :calorie4, class:"input-name", id:"last-name" %>kcal
+      <%= f.text_area :ing_name4, class:"input-name", id:"first-name" %>
+      <%= f.text_area :ing_quantity4, class:"input-name", id:"last-name" %>
+      <%= f.text_area :ing_calorie4, class:"input-name", id:"last-name" %>kcal
     </div>
     <div class='input-name-wrap'>
     材料4 
-      <%= f.text_area :name5, class:"input-name", id:"first-name" %>
-      <%= f.text_area :quantity5, class:"input-name", id:"last-name" %>
-      <%= f.text_area :calorie5, class:"input-name", id:"last-name" %>kcal
+      <%= f.text_area :ing_name5, class:"input-name", id:"first-name" %>
+      <%= f.text_area :ing_quantity5, class:"input-name", id:"last-name" %>
+      <%= f.text_area :ing_calorie5, class:"input-name", id:"last-name" %>kcal
     </div>
 
     <div>総カロリー
@@ -111,7 +111,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image2, id:"item-image" %>
+        <%= f.file_field :images, multiple: true , id:"item-image" %>
       </div> 
     
       <div class="items-explain">
@@ -128,7 +128,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image3, id:"item-image" %>
+        <%= f.file_field :images, multiple: true , id:"item-image" %>
       </div> 
     
       <div class="items-explain">
@@ -145,7 +145,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image4, id:"item-image" %>
+        <%= f.file_field :images, multiple: true , id:"item-image" %>
       </div> 
     
       <div class="items-explain">
@@ -162,7 +162,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image5, id:"item-image" %>
+        <%= f.file_field :images, multiple: true ,id:"item-image" %>
       </div> 
     
       <div class="items-explain">
@@ -179,7 +179,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image6, id:"item-image" %>
+        <%= f.file_field :images, multiple: true ,id:"item-image" %>
       </div> 
     
       <div class="items-explain">
