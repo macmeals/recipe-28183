@@ -28,7 +28,7 @@ Things you may want to cover:
 | Column     | Type       | Options                        |
 | ------     | ---------- | ------------------------------ |
 | nickname   | string     | null: false                    |
-| mail       | string     | null: false                    |
+| email       | string     | null: false                    |
 | password   | string     | null: false                    |
 
 ### Association
@@ -42,12 +42,13 @@ Things you may want to cover:
 | -------------  | ---------- | ------------------------------ |
 | name           | string     | null: false                    |
 | category_id    | integer    | null: false                    |
-| explaination   | string     | null: false                    |
-| detail1        | string     |                                |
-| detail2        | string     |                                |
-| detail3        | string     |                                |
-| detail4        | string     |                                |
-| detail5        | string     |                                |
+| explaination   | text       | null: false                    |
+| detail1        | text       |                                |
+| detail2        | text       |                                |
+| detail3        | text       |                                |
+| detail4        | text       |                                |
+| detail5        | text       |                                |
+| user_id        | integer    | null: false                    |
 
 ### Association
 

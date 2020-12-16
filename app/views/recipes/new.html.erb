@@ -1,0 +1,245 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+   <%= link_to image_tag('recipesimbol.png' , size: '100x100'), "/" %>
+
+  </header>
+  <div class="items-sell-main"> 
+    <h2 class="items-sell-title">あなたのレシピを入力して下さい。</h2>
+    <%= form_with(model:@recipe, local: true) do |f| %>
+
+    <%# <%= render 'shared/error_messages', model: f.object %> 
+
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+    １、料理画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, multiple: true , id:"item-image" %>
+      </div> 
+    </div>
+    <%# /出品画像 %>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+      ２、料理名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"料理名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+      ３、料理の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explaination, class:"items-text", id:"item-info", placeholder:"料理の説明（必須 1,000文字まで）（味、見た目、色、素材、等）例）シーフードを主に使ったカレーです。エビやホタテ、アサリ等をふんだんに使っておりますが、とても簡単です！" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <%# 商品の詳細 %>
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          ４、カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+    <%# /商品の詳細 %>
+
+    <%# /材料 %>
+  
+    <div class='form-text-wrap'>
+      <label class="form-text">５、材料</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+    材料1 
+      <%= f.text_area :ing_name1, class:"input-name", id:"first-name", placeholder:"例) 鶏肉" %>
+      <%= f.text_area :ing_quantity1, class:"input-name", id:"last-name", placeholder:"例) 100g" %>
+      <%= f.text_area :ing_calorie1, class:"input-name", id:"last-name", placeholder:"例) 150" %>kcal
+    </div>
+    <div class='input-name-wrap'>
+    材料2
+      <%= f.text_area :ing_name2, class:"input-name", id:"first-name"  %>
+      <%= f.text_area :ing_quantity2, class:"input-name", id:"last-name"  %>
+      <%= f.text_area :ing_calorie2, class:"input-name", id:"last-name" %>kcal
+    </div>
+    <div class='input-name-wrap'>
+    材料3 
+      <%= f.text_area :ing_name3, class:"input-name", id:"first-name" %>
+      <%= f.text_area :ing_quantity3, class:"input-name", id:"last-name" %>
+      <%= f.text_area :ing_calorie3, class:"input-name", id:"last-name" %>kcal
+    </div>
+    <div class='input-name-wrap'>
+    材料4 
+      <%= f.text_area :ing_name4, class:"input-name", id:"first-name" %>
+      <%= f.text_area :ing_quantity4, class:"input-name", id:"last-name" %>
+      <%= f.text_area :ing_calorie4, class:"input-name", id:"last-name" %>kcal
+    </div>
+    <div class='input-name-wrap'>
+    材料4 
+      <%= f.text_area :ing_name5, class:"input-name", id:"first-name" %>
+      <%= f.text_area :ing_quantity5, class:"input-name", id:"last-name" %>
+      <%= f.text_area :ing_calorie5, class:"input-name", id:"last-name" %>kcal
+    </div>
+
+    <div>総カロリー
+      <span id: "all_calories" ></span>kcal
+    </div>
+
+  <%# </div> %>
+
+    <%# /材料 %>
+
+<%# /手順 %>
+
+      <div class="weight-bold-text">
+    6、手順
+      </div>
+
+      <div class="click-upload">
+        <p>
+          手順①
+        </p>
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, multiple: true , id:"item-image" %>
+      </div> 
+    
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          <span>詳細</span>
+        </div>
+        <%= f.text_area :detail1, class:"items-text", id:"item-info", placeholder:"料理の詳細説明（必須 1,000文字まで）（味、見た目、色、素材、等）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      <div class="click-upload">
+        <p>
+          手順②
+        </p>
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, multiple: true , id:"item-image" %>
+      </div> 
+    
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          <span class="indispensable">詳細</span>
+        </div>
+        <%= f.text_area :detail2, class:"items-text", id:"item-info", placeholder:"料理の詳細説明（必須 1,000文字まで）（味、見た目、色、素材、等）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      <div class="click-upload">
+        <p>
+          手順③
+        </p>
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, multiple: true , id:"item-image" %>
+      </div> 
+    
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          <span class="indispensable">詳細</span>
+        </div>
+        <%= f.text_area :detail3, class:"items-text", id:"item-info", placeholder:"料理の詳細説明（必須 1,000文字まで）（味、見た目、色、素材、等）"  ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      <div class="click-upload">
+        <p>
+          手順④
+        </p>
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, multiple: true ,id:"item-image" %>
+      </div> 
+    
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          <span class="indispensable">詳細</span>
+        </div>
+        <%= f.text_area :detail4, class:"items-text", id:"item-info", placeholder:"料理の詳細説明（必須 1,000文字まで）（味、見た目、色、素材、等）"  ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      <div class="click-upload">
+        <p>
+          手順⑤
+        </p>
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :images, multiple: true ,id:"item-image" %>
+      </div> 
+    
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          <span class="indispensable">詳細</span>
+        </div>
+        <%= f.text_area :detail5, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+<%# /手順 %>
+    
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+
+  <% end %>
+</div>
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">RECIPE利用規約</a></li>
+    </ul>
+    <%= link_to image_tag('footer_icon.png' , size: '100x100'), "/" %>
+    <p class="inc">
+      ©︎RECIPE
+    </p>
+  </footer>
+
+
+
+  <%# カロリー計算の記述 %>
+    <%# <div class="sell-price"> %>
+      <%# <div class="weight-bold-text question-text">
+        <span>販売価格<br>(¥300〜9,999,999)</span>
+        <a class="question" href="#">?</a>
+      </div> %>
+      <%# <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+        <%# </div> %>
+        <%# <div class="price-content">
+          <span>販売手数料 (10%)</span>
+          <span>
+            <span id='add-tax-price'></span>円
+          </span>
+        </div> %>
+        <%# <div class="price-content">
+          <span>販売利益</span>
+          <span>
+            <span id='profit'></span>円
+        </div>
+        </span>
+      </div>
+    </div>  %>
+    <%# カロリー計算の記述 %>
