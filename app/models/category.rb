@@ -8,7 +8,4 @@ class Category < ActiveHash::Base
     { id: 6, name: 'その他' },
   ]
 
-    include ActiveHash: :Associations
-    has_many :recipes
-  
 end
