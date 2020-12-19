@@ -6,31 +6,54 @@
 </ul>
 
 <div class = "recipe_category">
- <ul class= "manu">
-  <li>1.和食</li>
-  <li><%= link_to image_tag("washoku.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %></li>
- </ul>
+ <div class= "manu">
+  <div>1.和食</div>
+   <%= link_to image_tag("washoku.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+   <% @recipe1.each do |recipe1| %>
+    <div class= "manu_list">
+     <%= link_to(recipe1.name, "#" )%>
+    </div>
+   <% end %>
+ </div>
 
- <ul class= "manu">
-  <li>2.洋食</li>
-  <li><%= link_to image_tag("yosyoku.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %></li>
- </ul>
+ <div class= "manu">
+  <div>2.洋食</div>
+  <%= link_to image_tag("yosyoku.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+  <% @recipe2.each do |recipe2| %>
+     <div class= "manu_list">
+      <%= link_to(recipe2.name, "#" )%>
+     </div>
+  <% end %>
+ </div>
 
- <ul class= "manu">
-  <li>３.イタリアン</li>
-  <li><%= link_to image_tag("italian.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %></li>
- </ul>
+ <div class= "manu">
+  <div>３.イタリアン</div>
+  <%= link_to image_tag("italian.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+  <% @recipe3.each do |recipe3| %>
+     <div class= "manu_list">
+      <%= link_to(recipe3.name, "#" )%>
+     </div>
+  <% end %>
+ </div>
 
- <ul class= "manu">
-  <li>4.エスニック</li>
-  <li><%= link_to image_tag("ethnic.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %></li>
- </ul>
+ <div class= "manu">
+  <div>4.エスニック</div>
+  <%= link_to image_tag("ethnic.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+  <% @recipe4.each do |recipe4| %>
+     <div class= "manu_list">
+      <%= link_to(recipe4.name, "#" )%>
+     </div>
+  <% end %>
+ </div>
 
- <ul class= "manu">
-  <li>５.その他</li>
-  <li><%= link_to image_tag("others.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %></li>
- </ul>
-
+<div class= "manu">
+  <div>５.その他</div>
+  <%= link_to image_tag("others.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+  <% @recipe5.each do |recipe5| %>
+     <div class= "manu_list">
+      <%= link_to(recipe5.name, "#" )%>
+     </div>
+  <% end %>
 </div>
 
 
