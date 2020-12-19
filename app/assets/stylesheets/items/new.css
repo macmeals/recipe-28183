@@ -220,11 +220,16 @@
   margin: 3vh 0;
 }
 
-.menu>li>a {
+.menu {
   color: black;
   font-size: 12px;
   margin: 2vw;
+ 
 }
+.manu_list{
+  margin-left: 2vw;
+}
+
 
 .inc {
   font-size: 13px;

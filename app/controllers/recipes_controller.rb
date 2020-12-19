@@ -1,6 +1,10 @@
 class RecipesController < ApplicationController
   def index
-    
+   @recipe1 = Recipe.where(category_id:2) 
+   @recipe2 = Recipe.where(category_id:3) 
+   @recipe3 = Recipe.where(category_id:4) 
+   @recipe4 = Recipe.where(category_id:5)
+   @recipe5 = Recipe.where(category_id:6)
   end
 
   def new
