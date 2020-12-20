@@ -25,8 +25,13 @@ class RecipesController < ApplicationController
     else
        render "new"
     end  
-    
   end
+
+  def show
+
+  end
+
+
 
   private
    def recipe_params
