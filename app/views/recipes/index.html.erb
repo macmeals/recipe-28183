@@ -1,4 +1,4 @@
-<%= render partial: "shared/header"  %>
+<%= render partial: "shared/header"  %> 
 
 <ul class = "recipe_upload">
  <li class = "recipe_comment">レシピの投稿はこちらから</li>
@@ -8,53 +8,55 @@
 <div class = "recipe_category">
  <div class= "manu">
   <div>1.和食</div>
-   <%= link_to image_tag("washoku.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+   <%= link_to image_tag("washoku.png",  class:"recipe-icon"), "https://cookpad.com/" %>
    <% @recipe1.each do |recipe1| %>
     <div class= "manu_list">
-     <%= link_to(recipe1.name, "#" )%>
+     <%= link_to(recipe1.name, recipe_path(recipe1.id) )%>
     </div>
    <% end %>
  </div>
 
  <div class= "manu">
   <div>2.洋食</div>
-  <%= link_to image_tag("yosyoku.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+  <%= link_to image_tag("yosyoku.png",  class:"recipe-icon"), "https://cookpad.com/" %>
   <% @recipe2.each do |recipe2| %>
      <div class= "manu_list">
-      <%= link_to(recipe2.name, "#" )%>
+      <%= link_to(recipe2.name, recipe_path(recipe2.id) )%>
      </div>
   <% end %>
  </div>
 
  <div class= "manu">
   <div>３.イタリアン</div>
-  <%= link_to image_tag("italian.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+  <%= link_to image_tag("italian.png",  class:"recipe-icon"), "https://cookpad.com/" %>
   <% @recipe3.each do |recipe3| %>
      <div class= "manu_list">
-      <%= link_to(recipe3.name, "#" )%>
+      <%= link_to(recipe3.name, recipe_path(recipe3.id) )%>
      </div>
   <% end %>
  </div>
 
  <div class= "manu">
   <div>4.エスニック</div>
-  <%= link_to image_tag("ethnic.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+  <%= link_to image_tag("ethnic.png",  class:"recipe-icon"), "https://cookpad.com/" %>
   <% @recipe4.each do |recipe4| %>
      <div class= "manu_list">
-      <%= link_to(recipe4.name, "#" )%>
+      <%= link_to(recipe4.name, recipe_path(recipe4.id) )%>
      </div>
   <% end %>
  </div>
 
 <div class= "manu">
   <div>５.その他</div>
-  <%= link_to image_tag("others.png",  class:"recipe-icon"), "https://www.yahoo.co.jp/" %>
+  <%= link_to image_tag("others.png",  class:"recipe-icon"), "https://cookpad.com/" %>
   <% @recipe5.each do |recipe5| %>
      <div class= "manu_list">
-      <%= link_to(recipe5.name, "#" )%>
+      <%= link_to(recipe5.name, recipe_path(recipe5.id) )%>
      </div>
   <% end %>
 </div>
 
+</div>
 
-<%= render partial: "shared/footer"  %>
+
+<%= render partial: "shared/footer" %>

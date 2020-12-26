@@ -1,0 +1,108 @@
+<%= render partial: "shared/second-header"  %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @recipe.name %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @recipe.image.variant(resize: '500x500') if @recipe.image.attached?%>
+    </div>
+
+    <% if user_signed_in? && current_user.id == @recipe.user_id %>
+    <%= link_to 'レシピ編集', edit_recipe_path(@recipe.id), method: :get, class: "item-red-btn" %>
+    <p class='or-text'>or</p>
+    <%= link_to 'レシピ削除', recipe_path(@recipe.id), method: :delete, class:'item-destroy' %>
+     <% end %>
+    <div class="item-explain-box">
+      <span><%= @recipe.explaination %></span>
+    </div>
+  </div>
+
+  <div class="item-box2">
+   <div class="ingredient_title">■材料</div>
+    <div class="ingredient_all">
+     <div class="ing_name">
+      <%= @recipe.ing_name1 %>
+     </div>
+     <div class="ing_quantity">
+      <%= @recipe.ing_quantity1 %>
+     </div>
+    </div>
+
+    <div class="ingredient_all">
+     <div class="ing_name">
+      <%= @recipe.ing_name2 %>
+     </div>
+     <div class="ing_quantity">
+      <%= @recipe.ing_quantity2 %>
+     </div>
+    </div>
+
+    <div class="ingredient_all">
+     <div class="ing_name">
+      <%= @recipe.ing_name3 %>
+     </div>
+     <div class="ing_quantity">
+      <%= @recipe.ing_quantity3 %>
+     </div>
+    </div>
+
+    <div class="ingredient_all">
+     <div class="ing_name">
+      <%= @recipe.ing_name4 %>
+     </div>
+     <div class="ing_quantity">
+      <%= @recipe.ing_quantity4 %>
+     </div>
+    </div>
+
+    <div class="ingredient_all">
+     <div class="ing_name">
+      <%= @recipe.ing_name5 %>
+     </div>
+     <div class="ing_quantity">
+      <%= @recipe.ing_quantity5 %>
+     </div>
+    </div>
+
+   <div class="detail_title">■手順</div>
+
+    <div class="detail_parent"> 
+     <div class="detail_sub_title">手順1</div>
+     <div class="detail_explain">
+      <%= @recipe.detail1 %>
+     </div>
+    </div>
+
+    <div class="detail_parent"> 
+     <div class="detail_sub_title">手順2</div>
+     <div class="detail_explain">
+      <%= @recipe.detail2 %>
+     </div>
+    </div>
+
+    <div class="detail_parent"> 
+     <div class="detail_sub_title">手順3</div>
+     <div class="detail_explain">
+      <%= @recipe.detail3  %>
+     </div>
+    </div>
+
+    <div class="detail_parent"> 
+     <div class="detail_sub_title">手順4</div>
+     <div class="detail_explain">
+      <%= @recipe.detail4  %>
+     </div>
+    </div>
+
+    <div class="detail_parent"> 
+     <div class="detail_sub_title">手順5</div>
+     <div class="detail_explain">
+      <%= @recipe.detail5  %>
+     </div>
+    </div>
+  
+  </div>
+  <%# /商品の概要 %>
+</div>
+<%= render partial: "shared/second-footer"  %>
