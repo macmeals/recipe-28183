@@ -28,14 +28,16 @@ class RecipesController < ApplicationController
   end
 
   def show
-
+    @recipe = Recipe.find(params[:id])
   end
 
-
+  def destroy
+  
+  end
 
   private
    def recipe_params
-    params.require(:recipe).permit(:name, :category_id, :explaination, :detail1, :detail2, :detail3, :detail4, :detail5, :ing_name1,:ing_quantity1,:ing_calorie1, :ing_name2,:ing_quantity2,:ing_calorie2,:ing_name3,:ing_quantity3,:ing_calorie3,:ing_name4,:ing_quantity4,:ing_calorie4,:ing_name5,:ing_quantity5,:ing_calorie5,images: []).merge(user_id: current_user.id)
+    params.require(:recipe).permit(:name, :category_id, :explaination, :detail1, :detail2, :detail3, :detail4, :detail5, :ing_name1,:ing_quantity1,:ing_calorie1, :ing_name2,:ing_quantity2,:ing_calorie2,:ing_name3,:ing_quantity3,:ing_calorie3,:ing_name4,:ing_quantity4,:ing_calorie4,:ing_name5,:ing_quantity5,:ing_calorie5,:image).merge(user_id: current_user.id)
    end
 
 
