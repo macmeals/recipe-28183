@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
    @recipe3 = Recipe.where(category_id:4) 
    @recipe4 = Recipe.where(category_id:5)
    @recipe5 = Recipe.where(category_id:6)
+   @recipe6 = Recipe.where(category_id:7)
   end
 
   def new
@@ -31,6 +32,26 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+    if user_signed_in? && current_user.id == @recipe.user_id
+      render "edit"
+    else
+      redirect_to new_user_session_path      
+    end
+
+  end
+
+def update
+     @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_params)
+       redirect_to recipe_path
+    else
+       render "edit"
+    end
+  end
+
+
   def destroy
     @recipe = Recipe.find(params[:id])
     if user_signed_in? && current_user.id == @recipe.user_id
@@ -39,6 +60,11 @@ class RecipesController < ApplicationController
     else
       render "index"
     end
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+
   end
 
 

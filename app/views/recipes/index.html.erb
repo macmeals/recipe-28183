@@ -26,9 +26,9 @@
   <% end %>
  </div>
 
- <div class= "manu">
-  <div>３.イタリアン</div>
-  <%= link_to image_tag("italian.png",  class:"recipe-icon"), "https://cookpad.com/" %>
+<div class= "manu">
+  <div>3.中華</div>
+  <%= link_to image_tag("chinese.png",  class:"recipe-icon"), "https://cookpad.com/" %>
   <% @recipe3.each do |recipe3| %>
      <div class= "manu_list">
       <%= link_to(recipe3.name, recipe_path(recipe3.id) )%>
@@ -37,8 +37,8 @@
  </div>
 
  <div class= "manu">
-  <div>4.エスニック</div>
-  <%= link_to image_tag("ethnic.png",  class:"recipe-icon"), "https://cookpad.com/" %>
+  <div>4.イタリアン</div>
+  <%= link_to image_tag("italian.png",  class:"recipe-icon"), "https://cookpad.com/" %>
   <% @recipe4.each do |recipe4| %>
      <div class= "manu_list">
       <%= link_to(recipe4.name, recipe_path(recipe4.id) )%>
@@ -46,17 +46,29 @@
   <% end %>
  </div>
 
-<div class= "manu">
-  <div>５.その他</div>
-  <%= link_to image_tag("others.png",  class:"recipe-icon"), "https://cookpad.com/" %>
+ <div class= "manu">
+  <div>5.エスニック</div>
+  <%= link_to image_tag("ethnic.png",  class:"recipe-icon"), "https://cookpad.com/" %>
   <% @recipe5.each do |recipe5| %>
      <div class= "manu_list">
       <%= link_to(recipe5.name, recipe_path(recipe5.id) )%>
      </div>
   <% end %>
+ </div>
 </div>
 
+<div class = "recipe_category">
+ <div class= "manu">
+  <div>6.その他</div>
+  <%= link_to image_tag("others.png",  class:"recipe-icon"), "https://cookpad.com/" %>
+  <% @recipe6.each do |recipe6| %>
+     <div class= "manu_list">
+      <%= link_to(recipe6.name, recipe_path(recipe6.id) )%>
+     </div>
+  <% end %>
+ </div>
 </div>
+
 
 
 <%= render partial: "shared/footer" %>
