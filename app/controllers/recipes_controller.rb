@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
    @recipe3 = Recipe.where(category_id:4) 
    @recipe4 = Recipe.where(category_id:5)
    @recipe5 = Recipe.where(category_id:6)
+   @recipe6 = Recipe.where(category_id:7)
   end
 
   def new
@@ -43,16 +44,12 @@ class RecipesController < ApplicationController
 
 def update
      @recipe = Recipe.find(params[:id])
-    if @recipe.update(item_params)
-       redirect_to item_path
+    if @recipe.update(recipe_params)
+       redirect_to recipe_path
     else
        render "edit"
     end
   end
-
-
-
-
 
 
   def destroy
