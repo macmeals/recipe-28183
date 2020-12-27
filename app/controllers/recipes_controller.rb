@@ -31,6 +31,30 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+    if user_signed_in? && current_user.id == @recipe.user_id
+      render "edit"
+    else
+      redirect_to new_user_session_path      
+    end
+
+  end
+
+def update
+     @recipe = Recipe.find(params[:id])
+    if @recipe.update(item_params)
+       redirect_to item_path
+    else
+       render "edit"
+    end
+  end
+
+
+
+
+
+
   def destroy
     @recipe = Recipe.find(params[:id])
     if user_signed_in? && current_user.id == @recipe.user_id
@@ -39,6 +63,11 @@ class RecipesController < ApplicationController
     else
       render "index"
     end
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+
   end
 
 
